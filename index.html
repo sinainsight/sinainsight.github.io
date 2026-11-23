@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SINAINSIGHT — DeepTech Cybersécurité & Observabilité Souveraine</title>
+<style>
+:root {
+  --bg: #0a0e1a;
+  --card-bg: #111827;
+  --card-border: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --gold: #f59e0b;
+  --cyan: #06b6d4;
+  --green: #10b981;
+  --red: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  padding: 16px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+h1 {
+  color: var(--gold);
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.tagline {
+  color: var(--cyan);
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+.sep {
+  border: none;
+  border-top: 2px solid var(--gold);
+  margin: 0 0 40px 0;
+}
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.product {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+  display: block;
+}
+.product:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.product h2 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+.product p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.product .tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.pill {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  color: var(--cyan);
+}
+.contact {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 40px;
+}
+.contact h3 {
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.contact a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+.contact a:hover { text-decoration: underline; }
+.contact p { margin-bottom: 6px; }
+.patent {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-border);
+}
+@media (min-width: 600px) {
+  .products { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>SINAINSIGHT</h1>
+  <p class="subtitle">DeepTech Cybersécurité & Observabilité Souveraine</p>
+  <hr class="sep">
+  <p class="tagline">5 produits. 0 agent. 100% on-premise.</p>
+
+  <div class="principles">
+    <span class="pill">100% Agentless</span>
+    <span class="pill">On-Premise Only</span>
+    <span class="pill">Souverain</span>
+    <span class="pill" style="color:var(--gold)">Brevet INPI FR2601046</span>
+    <span class="pill">NIS2 / DORA / RGPD / PCI-DSS</span>
+  </div>
+
+  <div class="products">
+    <a class="product" href="/lib-sina-crypt/whitepaper.html">
+      <h2 style="color:var(--gold)">lib_sina_crypt</h2>
+      <p>Chiffrement AES-256-GCM au niveau du champ. Nonce monotone breveté, indices aveugles HMAC, indices trigrammes. 5 bindings natifs (C, Go, Python, Rust, Node.js).</p>
+      <span class="tag" style="background:#1a2a1a;color:var(--green)">RGPD & PCI-DSS</span>
+      <span class="tag" style="background:#1a1a2a;color:var(--cyan)">Whitepaper disponible</span>
+    </a>
+
+    <a class="product" href="https://fraud-poc.sinainsight.eu" target="_blank" rel="noopener">
+      <h2 style="color:var(--red)">SinaApp Fraud</h2>
+      <p>Détection comportementale de fraude par scénarios agentless stateful. Mémoire persistante par compte (sina_mem). 25 000 scénarios/min.</p>
+      <span class="tag" style="background:#2a1a1a;color:var(--red)">POC live</span>
+    </a>
+
+    <a class="product" href="#">
+      <h2 style="color:var(--green)">SinaApp APM</h2>
+      <p>Supervision synthétique stateful. Moteur GoPhantom pur Go, 0 Chromium, ×300 débit vs Dynatrace. 56 endpoints W3C WebDriver + 14 primitives TN3270.</p>
+      <span class="tag" style="background:#1a2a1a;color:var(--green)">17 000+ scén/min</span>
+    </a>
+
+    <a class="product" href="#">
+      <h2 style="color:var(--blue)">SinaStack</h2>
+      <p>Observabilité infrastructure sans agent. 280+ types de sondes : systèmes, bases de données, middleware, réseau, mainframe, cloud, stockage.</p>
+      <span class="tag" style="background:#1a1a2a;color:var(--blue)">280+ sondes</span>
+    </a>
+
+    <a class="product" href="#">
+      <h2 style="color:var(--purple)">SinaShield</h2>
+      <p>Pre-SIEM : filtrage, enrichissement, déduplication, scoring et routage intelligent. Réduction de 85% du bruit avant le SIEM.</p>
+      <span class="tag" style="background:#1a1a2a;color:var(--purple)">-85% bruit SIEM</span>
+    </a>
+  </div>
+
+  <div class="contact">
+    <h3>Contact</h3>
+    <p><strong>Fabien Roy</strong> — CTO & Fondateur</p>
+    <p><a href="mailto:contact@sinainsight.eu">contact@sinainsight.eu</a></p>
+    <p><a href="mailto:fabien.roy@sinainsight.fr">fabien.roy@sinainsight.fr</a></p>
+    <p>+33 7 45 10 78 64</p>
+    <p><a href="https://www.sinainsight.com" target="_blank" rel="noopener">www.sinainsight.com</a></p>
+    <p class="patent">Brevet INPI FR2601046 — Nonce déterministe monotone AES-GCM</p>
+  </div>
+
+  <footer>
+    <p>SINAINSIGHT SAS — Éditeur français, hébergement européen</p>
+  </footer>
+</div>
+</body>
+</html>
